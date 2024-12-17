@@ -1,1 +1,2 @@
 ansible/shared/*
+!ansible/shared/ADD_YOUR_FILES_HERE
