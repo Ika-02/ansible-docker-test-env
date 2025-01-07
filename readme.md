@@ -49,8 +49,6 @@ This folder is mounted into the container and set as working directory, allowing
 Follow these steps to install and start an Apache web server on your target machines using Ansible.
 
 ```sh
-cd shared
-
 ansible web -i inventory.yml -m apk -a "name=apache2 state=present"
 
 ansible web -i inventory.yml -m service -a "name=apache2 state=started"
@@ -63,8 +61,6 @@ ansible web -i inventory.yml -m shell -a "service apache2 status"
 Use the following commands to install and configure a MariaDB database on your target machines using Ansible.
 
 ```sh
-cd shared
-
 ansible db -i inventory.yml -m apk -a "name=mysql state=present"
 
 ansible db -i inventory.yml -m shell -a "/etc/init.d/mariadb setup"
