@@ -15,7 +15,11 @@ RUN apk add --update --no-cache \
 
 # Configure init system
 RUN openrc default
-#VOLUME [ “/sys/fs/cgroup” ]
+
+# Configure Ansible
+RUN mkdir /etc/ansible \
+    && ansible-config init --disabled > /etc/ansible/ansible.cfg \
+    && sed -i 's|^;\s*interpreter_python\s*=\s*auto\s*|interpreter_python=auto_silent|' /etc/ansible/ansible.cfg
 
 # Configure SSH
 ADD id_rsa /root

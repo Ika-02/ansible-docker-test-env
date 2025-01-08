@@ -13,7 +13,6 @@ RUN apk add --update --no-cache \
 
 # Configure init system
 RUN openrc default
-#VOLUME [ “/sys/fs/cgroup” ]
 
 # Configure SSH
 COPY id_rsa.pub /root/.ssh/authorized_keys
