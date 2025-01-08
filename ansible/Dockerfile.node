@@ -13,7 +13,7 @@ RUN apk add --update --no-cache \
 
 # Configure init system
 RUN openrc default
-VOLUME [ “/sys/fs/cgroup” ]
+#VOLUME [ “/sys/fs/cgroup” ]
 
 # Configure SSH
 COPY id_rsa.pub /root/.ssh/authorized_keys
@@ -24,4 +24,5 @@ EXPOSE 22
 
 # Define the entrypoint
 COPY start.sh /start.sh
+RUN chmod +xs /start.sh
 ENTRYPOINT ["/start.sh"]

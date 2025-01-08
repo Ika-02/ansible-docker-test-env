@@ -6,6 +6,10 @@ This document provides instructions on how to set up and use an Ansible environm
 
 This environment is based on Alpine containers and can be easily customized using the `compose.yml` file. You can change the names of the containers, exposed ports, and other settings to fit your needs.
 
+## Note for MacOS Users 🍏
+
+On some operating systems, such as MacOS, the path of the shared folder in the `compose.yml` file might need to be specified as an absolute path. Ensure you update the path accordingly to avoid any issues.
+
 ## Launching the Environment 🚀
 
 ### Cloning the Repository 🌀
