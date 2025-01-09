@@ -24,6 +24,8 @@ RUN mkdir /etc/ansible \
 # Configure SSH
 ADD id_rsa /root
 RUN sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
+    && echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config \
+    && echo "LogLevel ERROR" >> /etc/ssh/ssh_config \
     && echo "root:root" | chpasswd \
     && cd /root && mkdir /root/.ssh/ \
     && cp /root/id_rsa /root/.ssh/ \

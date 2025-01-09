@@ -1,8 +1,9 @@
 ---
 services:
   # Container pour Ansible
-  ansible:
-    hostname: ansible
+  master:
+    container_name: master
+    hostname: master
     tty: true
     volumes:
       - ./shared:/shared
@@ -14,6 +15,7 @@ services:
       dockerfile: Dockerfile.ansible
   # Container pour le serveur web
   web:
+    container_name: web
     hostname: web
     tty: true
     ports:
@@ -26,6 +28,7 @@ services:
       dockerfile: Dockerfile.node
   # Container pour la base de données
   db:
+    container_name: db
     hostname: db
     tty: true
     networks:
